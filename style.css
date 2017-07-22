@@ -33,3 +33,11 @@ table.count {
   display: inline;
 }
 
+@media(max-width: 640px) {
+
+  .main-contents {
+    margin-left: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+	
