@@ -11,7 +11,16 @@ body {
   margin: 0;
 }
 
+a {
+  color: lime;
+}
+
+p {
+  font-size: 1.0em;
+}
+
 .background {
+  position: fixed;
   width: 100%;
   height: 1600px;
   background-attachment: fixed;
@@ -33,6 +42,18 @@ table.count {
   display: inline;
 }
 
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px 80px;
+}
+
+.logos > img {
+  max-height: 75px;
+  margin: 15px 30px;
+}
+
 @media(max-width: 640px) {
 
   body {
@@ -49,8 +70,17 @@ table.count {
 
   .main-contents {
     margin-left: 0;
-    padding: 10px 16px 100px 16px;
+    padding: 10px 16px 200px 16px;
     background: rgba(0, 0, 60, 0.7);
+  }
+
+  .logos {
+    padding: 30px 20px;
+  }
+
+  .logos > img {
+    max-height: 140px;
+    margin: 25px 40px;
   }
 }
 	
