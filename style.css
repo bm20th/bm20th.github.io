@@ -1,7 +1,7 @@
 html {
-  font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 body {
@@ -17,6 +17,18 @@ a {
 
 p {
   font-size: 1.0em;
+}
+
+hr {
+  margin: 0 15%;
+  height: 2px;
+  background-color: white;
+  border: none;
+}
+
+.title {
+  font-size: 1.4em;
+  color: cyan;
 }
 
 .background {
