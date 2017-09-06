@@ -20,10 +20,14 @@ p {
 }
 
 hr {
-  margin: 0 15%;
+  margin: 0 15% 10px 15%;
   height: 2px;
   background-color: white;
   border: none;
+}
+
+table td {
+  padding: 7px;
 }
 
 .title {
@@ -55,6 +59,18 @@ hr {
 
 table.count {
   display: inline;
+}
+
+.right {
+  display: block;
+  text-align: right;
+  margin-right: 10%;
+}
+
+.left {
+  display: block;
+  text-align: left;
+  margin-left: 10%;
 }
 
 .logos {
@@ -96,6 +112,10 @@ table.count {
   .logos > img {
     max-height: 140px;
     margin: 25px 40px;
+  }
+
+  .info {
+    margin: 0 10%;
   }
 }
 	
