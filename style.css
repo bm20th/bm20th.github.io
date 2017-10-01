@@ -95,6 +95,12 @@ ul.acid-bomb {
   margin-left: 25%;
 }
 
+.rule > hr {
+  border-top: dashed 1px black;
+  height: 0px;
+  margin-top: 10px;
+}
+
 @media(max-width: 640px) {
 
   body {
