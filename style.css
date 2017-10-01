@@ -85,6 +85,16 @@ table.count {
   margin: 15px 30px;
 }
 
+.rule > ul {
+  width: 45%;
+  margin-left: 10%;
+  text-align: left;
+}
+
+ul.acid-bomb {
+  margin-left: 25%;
+}
+
 @media(max-width: 640px) {
 
   body {
@@ -117,5 +127,17 @@ table.count {
   .info {
     margin: 0 10%;
   }
+
+  .rule {
+    text-align: left;
+    padding: 0 10%;
+  }
+
+  .rule > ul {
+    width: 100%;
+    margin-left: 0%;
+    text-align: left;
+  }
+
 }
 	
