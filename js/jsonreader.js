@@ -8,7 +8,12 @@ var jsonAddress = 'https://script.google.com/macros/s/AKfycbxmMH9utys425PKS3api7
 // -------------------------------------------------------------------
 
 // blockUI のコンフィグ設定
-$.blockUI.defaults.css.border = '4px solid #888888'; 
+$.blockUI.defaults.css.width = '100%';
+$.blockUI.defaults.css.left = '';
+$.blockUI.defaults.css.border = 'none'; 
+$.blockUI.defaults.css.backgroundColor = 'transparent';
+$.blockUI.defaults.css.color = '#ffff66';
+$.blockUI.defaults.css.fontSize = '18px';
 $.blockUI.defaults.fadeOut = 0; 
 $.blockUI.defaults.fadeIn = 0; 
 
@@ -26,7 +31,7 @@ function loadData( strURL ) {
 	$("#main-contents").css('display','none');
 
 	// blockUI 実行
-	$.blockUI({ message: '<h2>データを取得しています…</h2>' });
+	$.blockUI({ message: 'データを取得しています…' });
 
 	// Ajax で JSON データを受信
 	$.ajax({
