@@ -28,89 +28,134 @@ function loadData( strURL ) {
 	// blockUI 実行
 	$.blockUI({ message: '<h2>データを取得しています…</h2>' });
 
-	$.getJSON( strURL, function( data ) {
+	// Ajax で JSON データを受信
+	$.ajax({
+		url: strURL,
+		dataType: "json",
+		timeout: 20000,
+		success: function(data){ showData(data); },
+		error: function(){ showError(); }
+	});
+}
 
-		// blockUI 解除
-		$.unblockUI();
+// 受信データを表示
+function showData( data ) {
 
-		// 受信したデータが不足していたら終了
-		if (data.length < 2) {
-			return;
-		}
+	// 通信に成功したはずなのにデータが null のままであればエラー表示
+	if (data === null) {
+		showError();
+		return;
+	}
 
-		// 最終更新日を取得
-		var lastUpdate = null;
-		if (data[0].last_update !== undefined) {
-			lastUpdate = new Date( data[0].last_update );
-		}
-		if (lastUpdate !== null) {
-			$("#last_update").append( "Last Update " + getFormattedDateTime( lastUpdate ) );
-		}
+	// 受信したデータが想定外のもの、もしくは不足していたらエラー表示
+	if (data.length === null || data.length === undefined) {
+		showError();
+		return;
+	}
+	if (data.length < 2) {
+		showError();
+		return;
+	}
+	if (data[1].length === null || data[1].length === undefined) {
+		showError();
+		return;
+	}
 
-		// エントリーデータを処理
-		for (var n = 0; n < data[1].length; n ++ ) {
-			var entry = data[1][ n ];
-			var tds_entry = [];
-			var tds_staff = [];
-			var tds_gallery = [];
-			var tds_staff_noentry = [];
+	// 最終更新日を取得
+	var lastUpdate = null;
+	if (data[0].last_update !== undefined) {
+		lastUpdate = new Date( data[0].last_update );
+	}
+	if (lastUpdate !== null) {
+		$("#last_update").append( "Last Update " + getFormattedDateTime( lastUpdate ) );
+	} else {
+		// 取得できなかった場合は不明とする
+		$("#last_update").append( "Last Update ----.--.-- --/--" );
+	}
 
-			if (entry.number !== undefined || entry.name !== undefined && entry.area !== undefined && entry.area !== undefined) {
-				if (entry.number != '' && entry.name != '') {
-					var row = '';
-					
-					row = "<td id='number'>" + escapeHTML( entry.number.toString() ) + "</td>\n"
-						+ "<td id='name'>" + escapeHTML( entry.name ) + "</td>\n"
-						+ "<td id='area'>" + escapeHTML( entry.area ) + "</td>\n"
-						+ "<td id='comment'>" + escapeHTML( entry.comment ) + "</td>\n";
-					
-					switch ( entry.number.toString().slice(0, 1) ) {
-						case 'G':
-							if ( entry.number.toString().slice(1, 2) == 'S' ) {
-								tds_staff_noentry.push( row );
-							} else {
-								tds_gallery.push( row );
-							}
-							break;
-						case 'S':
+	// blockUI 解除
+	$.unblockUI();
+
+	// エントリーデータを処理
+	for (var n = 0; n < data[1].length; n ++ ) {
+		var entry = data[1][ n ];
+		var tds_entry = [];
+		var tds_staff = [];
+		var tds_gallery = [];
+		var tds_staff_noentry = [];
+
+		if (entry.number !== undefined || entry.name !== undefined && entry.area !== undefined && entry.area !== undefined) {
+			if (entry.number != '' && entry.name != '') {
+				var row = '';
+				
+				row = "<td id='number'>" + escapeHTML( entry.number.toString() ) + "</td>\n"
+					+ "<td id='name'>" + escapeHTML( entry.name ) + "</td>\n"
+					+ "<td id='area'>" + escapeHTML( entry.area ) + "</td>\n"
+					+ "<td id='comment'>" + escapeHTML( entry.comment ) + "</td>\n";
+				
+				switch ( entry.number.toString().slice(0, 1) ) {
+					case 'G':
+						if ( entry.number.toString().slice(1, 2) == 'S' ) {
+							tds_staff_noentry.push( row );
+						} else {
+							tds_gallery.push( row );
+						}
+						break;
+					case 'S':
+						if ( entry.number.toString().slice(1, 2) == 'G' ) {
+							tds_staff_noentry.push( row );
+						} else {
 							tds_staff.push( row );
-							break;
-						default:
-							tds_entry.push( row );
-					} // end-of switch
-				} // end-of if data is empty
-			} // end-of if data is undefined
-			
-			$("#entry").append(
-				$( "<tr>", {
-					"class": "list",
-					html: tds_entry.join( "" )
-				})
-			);
-			$("#gallery").append(
-				$( "<tr>", {
-					"class": "list",
-					html: tds_gallery.join( "" )
-				})
-			);
-			$("#staff").append(
-				$( "<tr>", {
-					"class": "list",
-					html: tds_staff.join( "" )
-				})
-			);
-			$("#staff_noentry").append(
-				$( "<tr>", {
-					"class": "list",
-					html: tds_staff_noentry.join( "" )
-				})
-			);
-		} // end-of for (var n ...
+						}
+						break;
+					default:
+						tds_entry.push( row );
+				} // end-of switch
+			} // end-of if data is empty
+		} // end-of if data is undefined
+		
+		$("#entry").append(
+			$( "<tr>", {
+				"class": "list",
+				html: tds_entry.join( "" )
+			})
+		);
+		$("#gallery").append(
+			$( "<tr>", {
+				"class": "list",
+				html: tds_gallery.join( "" )
+			})
+		);
+		$("#staff").append(
+			$( "<tr>", {
+				"class": "list",
+				html: tds_staff.join( "" )
+			})
+		);
+		$("#staff_noentry").append(
+			$( "<tr>", {
+				"class": "list",
+				html: tds_staff_noentry.join( "" )
+			})
+		);
+	} // end-of for (var n ...
 
-		// Last Update とテーブルを表示
-		$("#main-contents").css('display','block');
+	// Last Update とテーブルを表示
+	$("#main-contents").css('display','block');
 
-}); // end-of $.getJSON
+}
+
+// 通信エラー表示
+function showError() {
+
+	// blockUI 解除
+	$.unblockUI();
+
+	// Last Update の代わりにエラーメッセージを表示
+	$("#last_update").append( "エントリー情報の取得に失敗しました。<br />\n恐れ入りますが少し時間を空けてから再読み込みをお願いいたします。" );
+
+	// エラー表示
+	$("#main-contents").css('display','block');
 
 }
 
