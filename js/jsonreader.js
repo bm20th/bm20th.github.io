@@ -85,6 +85,7 @@ function showData( data ) {
 	for (var n = 0; n < data[1].length; n ++ ) {
 		var entry = data[1][ n ];
 		var tds_entry = [];
+		var tds_wait_cancel = [];
 		var tds_staff = [];
 		var tds_gallery = [];
 		var tds_staff_noentry = [];
@@ -113,6 +114,9 @@ function showData( data ) {
 							tds_staff.push( row );
 						}
 						break;
+					case 'W':
+						tds_wait_cancel.push( row );
+						break;
 					default:
 						tds_entry.push( row );
 				} // end-of switch
@@ -123,6 +127,12 @@ function showData( data ) {
 			$( "<tr>", {
 				"class": "list",
 				html: tds_entry.join( "" )
+			})
+		);
+		$("#wait_cancel").append(
+			$( "<tr>", {
+				"class": "list",
+				html: tds_wait_cancel.join( "" )
 			})
 		);
 		$("#gallery").append(
