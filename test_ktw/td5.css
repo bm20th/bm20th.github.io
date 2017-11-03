@@ -1,0 +1,273 @@
+/*============================================
+全体
+============================================*/
+body {
+	color: #DDD;
+	background-color:#000;
+	background-image:url("images/td5_back.jpg");
+	background-attachment: fixed;
+	text-align:center;
+}
+
+/* 登録者リストの最終更新日用 */
+#last_update {
+  font-size: 1.4em;
+  color: cyan;
+}
+
+/*============================================
+リンクカラー
+============================================*/
+a:link {
+	color:#8080FF;
+	text-decoration:none;
+}
+a:visited {
+	color:#606095;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+a:active {
+	color:#FFFF80;
+}
+
+/*============================================
+ナビゲーションメニュー
+============================================*/
+#nav{
+    height:60px;
+    border-bottom:1px solid #aaaaaa;
+    position:fixed;
+    top:0px;
+    left:0px;
+    right:0px;
+    background-image:url("images/td5_back.jpg");
+}
+
+#nav ul{
+    height:60px;
+    list-style:none;
+    padding:0px 0px 0px 0px;
+    margin:0px auto 0px auto;
+    width:1000px;
+}
+
+#nav ul li{
+    display:inline;
+    float:left;
+    margin:0px 2px;
+}
+
+
+/*============================================
+ボタン部分アニメーションcss (ヘッダーボタン)
+============================================*/
+#btn_top{
+    float:left;
+    margin:0px;
+}
+#btn_top a{
+	display: block;
+	width: 60px;
+	height: 60px;
+	background: url("images/btn_top.png") no-repeat 0 0;
+}
+#btn_top a:hover {
+	background-position: 0 bottom;
+}
+
+#btn_about a{
+	display: block;
+	width: 180px;
+	height: 60px;
+	background: url("images/btn_top_about.png") no-repeat 0 0;
+}
+#btn_about a:hover {
+	background-position: 0 bottom;
+}
+
+#btn_rule a{
+	display: block;
+  width: 180px;
+	height: 60px;
+	background: url("images/btn_top_rule.png") no-repeat 0 0;
+}
+#btn_rule a:hover {
+	background-position: 0 bottom;
+}
+
+#btn_entry a{
+	display: block;
+  width: 180px;
+	height: 60px;
+	background: url("images/btn_top_entry.png") no-repeat 0 0;
+}
+#btn_entry a:hover {
+	background-position: 0 bottom;
+}
+
+#btn_exb a{
+	display: block;
+  width: 180px;
+	height: 60px;
+	background: url("images/btn_top_exb.png") no-repeat 0 0;
+}
+#btn_exb a:hover {
+	background-position: 0 bottom;
+}
+
+#btn_nomi a{
+	display: block;
+  width: 180px;
+	height: 60px;
+	background: url("images/btn_top_nomi.png") no-repeat 0 0;
+}
+#btn_nomi a:hover {
+	background-position: 0 bottom;
+}
+
+#btn_na a{
+	display: block;
+  width: 180px;
+	height: 60px;
+	background: url("images/btn_top_na.png") no-repeat 0 0;
+}
+#btn_exb a:hover {
+	background-position: 0 bottom;
+}
+
+/*============================================
+ボタン部分アニメーションcss (各コンテンツトップナビ)
+============================================*/
+#topnav_greet a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_greet.png") no-repeat 0 0;
+}
+#topnav_greet a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_access a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_access.png") no-repeat 0 0;
+}
+#topnav_access a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_nomi a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_nomikai.png") no-repeat 0 0;
+}
+#topnav_nomi a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_tt a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_tt.png") no-repeat 0 0;
+}
+#topnav_tt a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_entry a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_entry.png") no-repeat 0 0;
+}
+#topnav_entry a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_entrylist a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_entrylist.png") no-repeat 0 0;
+}
+#topnav_entrylist a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_nomi_about a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_nomikai.png") no-repeat 0 0;
+}
+#topnav_nomi_about a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_nomi_entry a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_nomientry.png") no-repeat 0 0;
+}
+#topnav_nomi_entry a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_nomi_list a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_nomilist.png") no-repeat 0 0;
+}
+#topnav_nomi_list a:hover {
+	background-position: 0 bottom;
+}
+
+
+#topnav_common a{
+	display: block;
+  width: 240px;
+	height: 30px;
+	background: url("images/top_nav_commonrule.png") no-repeat 0 0;
+}
+#topnav_common a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_qualify a{
+	display: block;
+  width: 240px;
+	height: 30px;
+	background: url("images/top_nav_qualify.png") no-repeat 0 0;
+}
+#topnav_qualify a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_final a{
+	display: block;
+  width: 240px;
+	height: 30px;
+	background: url("images/top_nav_final.png") no-repeat 0 0;
+}
+#topnav_final a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_loser a{
+	display: block;
+  width: 240px;
+	height: 30px;
+	background: url("images/top_nav_loser.png") no-repeat 0 0;
+}
+#topnav_loser a:hover {
+	background-position: 0 bottom;
+}
