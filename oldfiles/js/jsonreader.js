@@ -10,12 +10,12 @@ var jsonAddress = 'https://script.google.com/macros/s/AKfycbxmMH9utys425PKS3api7
 // blockUI のコンフィグ設定
 $.blockUI.defaults.css.width = '100%';
 $.blockUI.defaults.css.left = '';
-$.blockUI.defaults.css.border = 'none';
+$.blockUI.defaults.css.border = 'none'; 
 $.blockUI.defaults.css.backgroundColor = 'transparent';
 $.blockUI.defaults.css.color = '#ffff66';
-$.blockUI.defaults.css.fontSize = '1.4em';
-$.blockUI.defaults.fadeOut = 0;
-$.blockUI.defaults.fadeIn = 0;
+$.blockUI.defaults.css.fontSize = '18px';
+$.blockUI.defaults.fadeOut = 0; 
+$.blockUI.defaults.fadeIn = 0; 
 
 // jQuery エントリーポイント
 $(function() {
@@ -93,12 +93,12 @@ function showData( data ) {
 		if (entry.number !== undefined || entry.name !== undefined && entry.area !== undefined && entry.area !== undefined) {
 			if (entry.number != '' && entry.name != '') {
 				var row = '';
-
+				
 				row = "<td id='number'>" + escapeHTML( entry.number.toString() ) + "</td>\n"
 					+ "<td id='name'>" + escapeHTML( entry.name ) + "</td>\n"
 					+ "<td id='area'>" + escapeHTML( entry.area ) + "</td>\n"
 					+ "<td id='comment'>" + escapeHTML( entry.comment ) + "</td>\n";
-
+				
 				switch ( entry.number.toString().slice(0, 1) ) {
 					case 'G':
 						if ( entry.number.toString().slice(1, 2) == 'S' ) {
@@ -122,7 +122,7 @@ function showData( data ) {
 				} // end-of switch
 			} // end-of if data is empty
 		} // end-of if data is undefined
-
+		
 		$("#entry").append(
 			$( "<tr>", {
 				"class": "list",
@@ -177,13 +177,13 @@ function showError() {
 // Date 型から文字列への変換処理
 function getFormattedDateTime( date ) {
 	var yyyy, mm, dd, hh, nn;
-
+	
 	yyyy = date.getFullYear().toString();
 	mm = ('0' + (date.getMonth() + 1).toString()).slice(-2);
 	dd = ('0' + date.getDate().toString()).slice(-2);
 	hh = ('0' + date.getHours().toString()).slice(-2);
 	nn = ('0' + date.getMinutes().toString()).slice(-2);
-
+	
 	return yyyy + '.' + mm + '.' + dd + ' ' + hh + ':' + nn;
 }
 
