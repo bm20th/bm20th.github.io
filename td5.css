@@ -271,3 +271,23 @@ a:active {
 #topnav_loser a:hover {
 	background-position: 0 bottom;
 }
+
+#topnav_exb_about a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_about_exb.png") no-repeat 0 0;
+}
+#topnav_exb_about a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_exb_vote a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_vote_exb.png") no-repeat 0 0;
+}
+#topnav_exb_vote a:hover {
+	background-position: 0 bottom;
+}
