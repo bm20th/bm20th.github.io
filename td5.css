@@ -291,3 +291,16 @@ a:active {
 #topnav_exb_vote a:hover {
 	background-position: 0 bottom;
 }
+
+/*============================================
+TOPページスライドショー
+============================================*/
+.bg-slider {
+	width: 1000px;
+	height: 600px;
+	background-position:center center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
