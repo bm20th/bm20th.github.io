@@ -134,7 +134,24 @@ a:active {
 	height: 60px;
 	background: url("images/btn_top_na.png") no-repeat 0 0;
 }
-#btn_exb a:hover {
+
+#btn_result a{
+	display: block;
+  width: 180px;
+	height: 60px;
+	background: url("./images/btn_top_result.png") no-repeat 0 0;
+}
+#btn_result a:hover {
+	background-position: 0 bottom;
+}
+
+#btn_archives a{
+	display: block;
+  width: 180px;
+	height: 60px;
+	background: url("./images/btn_top_archives.png") no-repeat 0 0;
+}
+#btn_archives a:hover {
 	background-position: 0 bottom;
 }
 
@@ -289,6 +306,46 @@ a:active {
 	background: url("images/top_nav_vote_exb.png") no-repeat 0 0;
 }
 #topnav_exb_vote a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_exb_result a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_result_exb.png") no-repeat 0 0;
+}
+#topnav_exb_result a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_entrylist_all a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_entrylist_all.png") no-repeat 0 0;
+}
+#topnav_entrylist_all a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_archive_movie a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_archive_movie.png") no-repeat 0 0;
+}
+#topnav_archive_movie a:hover {
+	background-position: 0 bottom;
+}
+
+#topnav_archive_pub a{
+	display: block;
+  width: 250px;
+	height: 30px;
+	background: url("images/top_nav_archive_pub.png") no-repeat 0 0;
+}
+#topnav_archive_pub a:hover {
 	background-position: 0 bottom;
 }
 

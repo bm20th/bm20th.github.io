@@ -3,7 +3,7 @@
 // コンフィグ --------------------------------------------------------
 
 // JSON データが存在する URL
-var jsonAddress = 'https://script.google.com/macros/s/AKfycbxmMH9utys425PKS3api7ZjtCm4PVgIFFuT0HXP2CrlJBEYQK0/exec';
+var jsonAddress = './js/entries_main.json';
 
 // -------------------------------------------------------------------
 

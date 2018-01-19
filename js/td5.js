@@ -29,5 +29,4 @@ $(function(){
 				  shuffle: true, // 背景画像の順番をシャッフルするか指定 true=する　false=しない
 	    });
 	});
-
 });
